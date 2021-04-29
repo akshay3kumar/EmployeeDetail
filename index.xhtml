@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<head>
+<title>User Detail</title>
+</head>
+<h:body>
+	<h1>Please Fill the details...</h1>
+
+	<h:form>
+		<h:panelGrid id="panel" columns="2" border="0" cellpadding="10"
+			cellspacing="1">
+			<h:outputText value="Employee ID" />
+			<h:inputText id="EmpId" value="#{user.empId}" required="true"
+				requiredMessage="ID is required"></h:inputText>
+			<h:outputText value="Employee Name" />
+			<h:inputText id="Empname" value="#{user.empName}" required="true"
+				requiredMessage="Employee Name is required"></h:inputText>
+			<h:outputText value="Project Name" />
+			<h:inputText id="prjtname" value="#{user.prjtName}" required="true"
+				requiredMessage="Project name is required"></h:inputText>
+			<h:outputText value="Contact No.(Self)" />
+			<h:inputText id="mobNo" value="#{user.mobSelf}" required="true"
+				requiredMessage="Contact No. is required">
+				<f:validateLength minimum="10" maximum="10" />
+			</h:inputText>
+
+		</h:panelGrid>
+
+		<br></br>
+		<h2>Family member detail.</h2>
+		<h:panelGrid id="panel1" columns="2" border="0" cellpadding="10"
+			cellspacing="1">
+			<h:outputText value="Name" />
+			<h:inputText id="familyName" value="#{user.familyMembName}"
+				required="true" requiredMessage="Family member name is required"></h:inputText>
+			<h:outputText value="Mobile no." />
+			<h:inputText id="familymob" value="#{user.familyMembMob}"
+				required="true"
+				requiredMessage="Family member mobile no. is required">
+				<f:validateLength minimum="10" maximum="10" />
+			</h:inputText>
+			<h:outputText value="Relation" />
+			<h:inputText id="familyrelation" value="#{user.familyMembRel}"
+				required="true" requiredMessage="Family relation is required"></h:inputText>
+		</h:panelGrid>
+
+
+
+
+		<h:commandButton id="cmd" value="Submit" action="#{user.display1}">
+
+
+		</h:commandButton>
+
+
+	</h:form>
+	<h:message for="EmpId" style="color:red"></h:message>
+	<br></br>
+	<h:message for="Empname" style="color:red"></h:message>
+	<br></br>
+	<h:message for="prjtname" style="color:red"></h:message>
+	<br></br>
+	<h:message for="mobNo" style="color:red"></h:message>
+	<br></br>
+	<h:message for="familyName" style="color:red"></h:message>
+	<br></br>
+	<h:message for="familymob" style="color:red"></h:message>
+	<br></br>
+	<h:message for="familyrelation" style="color:red"></h:message>
+
+
+</h:body>
+</html>
